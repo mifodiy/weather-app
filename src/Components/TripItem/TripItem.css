@@ -1,0 +1,24 @@
+.trip__item {
+	width: 200px;
+	flex: 0 0 200px;
+	border: 1px solid #d4d2d2;
+}
+
+.trip__item.active {
+	border-color: #1e79ad;
+}
+
+.trip__img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+}
+
+.trip__content {
+	padding: 15px;
+}
+
+.trip__date {
+	font-size: 14px;
+	color: #777;
+}

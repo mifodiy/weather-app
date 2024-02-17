@@ -1,0 +1,17 @@
+.forecast__list {
+	display: flex;
+	gap: 30px;
+	width: 860px;
+	overflow-x: scroll;
+
+}
+
+.forecast__list::-webkit-scrollbar {
+  width: 0;
+}
+
+.forecast__title {
+	font-size: 32px;
+	font-weight: 500;
+	margin-bottom: 30px;
+}

@@ -1,0 +1,60 @@
+.forecast-card {
+	width: 35%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100vh;
+	background-color: blue;
+	padding: 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.forecast-card__content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+}
+
+.forecast-card__day {
+	font-size: 36px;
+	font-weight: 700;
+	color: #fff;
+}
+
+.forecast-card__info {
+	position: relative;
+}
+
+.forecast-card__img {
+	position: absolute;
+	width: 100px;
+	top: 50%;
+	left: -120px;
+	max-width: inherit;
+	transform: translateY(-50%);
+}
+
+.forecast-card__temperature {
+	font-size: 100px;
+	font-weight: 500;
+	line-height: 1;
+	color: #fff;
+}
+
+.forecast-card__temperature::after {
+	content: '°C';
+	position: absolute;
+	top: 0;
+	right: -30px;
+	font-size: 28px;
+}
+
+.forecast-card__city {
+	font-size: 48px;
+	font-weight: 300;
+	color: #fff;
+	text-transform: capitalize;
+}

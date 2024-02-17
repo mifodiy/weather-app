@@ -1,0 +1,12 @@
+.forecast__item {
+	width: 90px;
+	flex: 0 0 90px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	align-items: center;
+}
+
+.forecast__icon {
+	flex-grow: 1;
+}
