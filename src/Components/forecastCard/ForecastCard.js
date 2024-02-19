@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './ForecastCard.css'
 import { weatherIcon } from '../../images/images'
 import Timer from '../timer/Timer'
+import { getDayOfWeek } from '../../helpers/getDayOfWeek'
 
 const ForecastCard = () => {
 	const [forecast, setForecast] = useState(
@@ -63,14 +64,14 @@ const ForecastCard = () => {
 	return (
 		<aside className='forecast-card'>
 			<div className='forecast-card__content'>
-				<div className='forecast-card__day'>{forecast.days[0].datetime}</div>
+				<div className='forecast-card__day'>{getDayOfWeek(forecast.days[0].datetime)}</div>
 				<div className='forecast-card__info'>
 					<img className='forecast-card__img' src={weatherIcon[forecast.days[0].icon]} alt={forecast.days[0].icon}/>
 					<div className='forecast-card__temperature'>{Math.round(forecast.days[0].temp)}</div>
 				</div>
 				<div className='forecast-card__city'>{forecast.address}</div>
 			</div>
-			<Timer/>
+			<Timer startDate={'2024-02-21'}/>
 		</aside>
 	)
 }

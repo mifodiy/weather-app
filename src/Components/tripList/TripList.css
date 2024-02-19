@@ -1,15 +1,21 @@
+.trip__wrapper {
+	position: relative;
+	width: 860px;
+}
 .trip__list {
 	display: flex;
 	gap: 20px;
 	width: 860px;
 	overflow-x: scroll;
+	scroll-behavior: smooth;
 }
 
 .trip__list::-webkit-scrollbar {
-  
+  height: 1px;
+	background-color: transparent;
 }
 
-.trip__btn {
+.trip__add-btn {
 	width: 200px;
 	height: 200px;
 	flex: 0 0 200px;
@@ -19,4 +25,30 @@
 	align-items:center;
 	justify-content: center;
 	cursor: pointer;
+}
+
+.trip__btn {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background-color: rgba(0, 0, 0, .4);
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	transition: background-color ease-in-out .4s;
+}
+
+.trip__btn:hover {
+	background-color: rgba(0, 0, 0, .7);
+}
+
+.trip__btn--left{
+	left: 10px;
+}
+
+.trip__btn--right{
+	right: 10px;
 }
