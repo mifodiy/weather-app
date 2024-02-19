@@ -1,8 +1,17 @@
 .timer {
+	color: #fff;
+}
+
+.timer__message {
+	font-size: 32px;
+	font-weight: 500;
+	text-align: center;
+}
+
+.timer__list {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
-	color: #fff;
 }
 
 .timer__item {
