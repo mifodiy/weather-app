@@ -20,9 +20,13 @@ function App() {
   const [selectedTrip, setSelectedTrip] = useState(null);
   const [forecastList, setForecastList] = useState(null);
   const [todayForecast, setTodayForecast] = useState(null);
+  const [search, setSearch] = useState('');
 
   const toggleModal = () => {
     setIsOpen(!isOpen);
+    setSelectedTrip(null);
+    setForecastList(null);
+    setSearch('');
   }
 
   const addNewTrip = (newTrip) => {
@@ -32,6 +36,22 @@ function App() {
 
   const handleSelectTrip = (trip) => {
     setSelectedTrip(trip)
+  }
+
+  const handleSearchChange = (e) => {
+    setSearch(e.currentTarget.value);
+    setSelectedTrip(null);
+    setForecastList(null);
+  }
+
+  const getFilteredTrips = () => {
+    if(search) {
+      return trips.filter(trip => (
+        trip.name.toLowerCase().includes(search.toLowerCase()) 
+      ))
+    }
+
+    return trips
   }
 
   useEffect(() => {
@@ -45,8 +65,10 @@ function App() {
     <>
     <Header/>
     <main className='main'>
-      <Search/>
-      <TripList openModal={toggleModal} trips={trips} selectTrip={handleSelectTrip} selectedTrip={selectedTrip}/>
+      <Search value={search} onChange={handleSearchChange}/>
+      <TripList openModal={toggleModal} trips={getFilteredTrips().sort(
+                (prevTrip, nextTrip) => prevTrip.startDate - nextTrip.startDate
+              )} selectTrip={handleSelectTrip} selectedTrip={selectedTrip}/>
       {selectedTrip && forecastList && <ForecastList forecast={forecastList}/>}
      
     </main>
