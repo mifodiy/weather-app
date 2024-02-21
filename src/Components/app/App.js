@@ -8,12 +8,22 @@ import './App.css';
 import { useState } from 'react';
 import AddForm from '../addForm/AddForm';
 import { MdClose } from "react-icons/md";
+import cities from "../../cities.json"
+import { nanoid } from 'nanoid';
+
+const defaultTrip = {id: 1, name: 'London', imageUrl: 'https://res.cloudinary.com/diasihr5q/image/upload/v1708426643/london.jpg', startDate: 1708560000000, endDate: 1708660000000}
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
+  const [trips, setTrips] = useState([defaultTrip])
 
   const toggleModal = () => {
     setIsOpen(!isOpen);
+  }
+
+  const addNewTrip = (newTrip) => {
+    newTrip.id = nanoid();
+    setTrips([...trips, newTrip].sort((prevTrip, nextTrip) => prevTrip.startDate - nextTrip.startDate))
   }
 
   return (
@@ -21,7 +31,7 @@ function App() {
     <Header/>
     <main className='main'>
       <Search/>
-      <TripList openModal={toggleModal}/>
+      <TripList openModal={toggleModal} trips={trips}/>
       <ForecastList/>
     </main>
     <ForecastCard/>
@@ -32,7 +42,7 @@ function App() {
           <button onClick={toggleModal}><MdClose size={20} /></button>
         </header>
         
-        <AddForm/>
+        <AddForm cities={cities} closeModal={toggleModal} addNewTrip={addNewTrip}/>
       </Modal>
     )}
     </>

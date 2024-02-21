@@ -1,16 +1,17 @@
 import React from 'react'
+import {convertTimeToDateFormat} from '../../helpers/convertTimeToDateFormat'
 import './TripItem.css'
 
-const TripItem = ({id, city, imageUrl}) => {
+const TripItem = ({id, name, imageUrl, startDate, endDate}) => {
 	return (
 		<div className='trip__item'>
-			<img className='trip__img' src={imageUrl} alt={city}/>
+			<img className='trip__img' src={imageUrl} alt={name}/>
 			<div className='trip__content'>
 				<h2 className='trip__title'>
-					{city}
+					{name}
 				</h2>
 				<div className='trip__date'>
-					<span>22.05.2024</span> - <span>30.05.2024</span>
+					<span>{convertTimeToDateFormat(startDate, 'points')}</span> - <span>{convertTimeToDateFormat(endDate, 'points')}</span>
 				</div>
 			</div>
 		</div>

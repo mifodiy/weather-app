@@ -1,0 +1,72 @@
+[
+	{
+		"id": 1,
+		"name": "London",
+		"imageUrl": "https://res.cloudinary.com/diasihr5q/image/upload/v1708426643/london.jpg"
+	},
+	{
+		"id": 2,
+		"name": "Paris",
+		"imageUrl": "https://res.cloudinary.com/diasihr5q/image/upload/v1708426924/paris.jpg"
+	},
+	{
+		"id": 3,
+		"name": "Berlin",
+		"imageUrl": "https://res.cloudinary.com/diasihr5q/image/upload/v1708427020/berlin.jpg"
+	},
+	{
+		"id": 4,
+		"name": "Madrid",
+		"imageUrl": "https://res.cloudinary.com/diasihr5q/image/upload/v1708427091/madrid.jpg"
+	},
+	{
+		"id": 5,
+		"name": "Rome",
+		"imageUrl": "https://res.cloudinary.com/diasihr5q/image/upload/v1708427260/rome.jpg"
+	},
+	{
+		"id": 6,
+		"name": "Amsterdam",
+		"imageUrl": "https://res.cloudinary.com/diasihr5q/image/upload/v1708427385/amsterdam.jpg"
+	},
+	{
+		"id": 7,
+		"name": "Brussels",
+		"imageUrl": "https://res.cloudinary.com/diasihr5q/image/upload/v1708427477/brussels.jpg"
+	},
+	{
+		"id": 8,
+		"name": "Lisbon",
+		"imageUrl": "https://res.cloudinary.com/diasihr5q/image/upload/v1708427562/lisbon.jpg"
+	},
+	{
+		"id": 9,
+		"name": "Bern",
+		"imageUrl": "https://res.cloudinary.com/diasihr5q/image/upload/v1708427682/bern.jpg"
+	},
+	{
+		"id": 10,
+		"name": "Vienna",
+		"imageUrl": "https://res.cloudinary.com/diasihr5q/image/upload/v1708427775/vienna.jpg"
+	},
+	{
+		"id": 11,
+		"name": "Dublin",
+		"imageUrl": "https://res.cloudinary.com/diasihr5q/image/upload/v1708427858/dublin.jpg"
+	},
+	{
+		"id": 12,
+		"name": "Oslo",
+		"imageUrl": "https://res.cloudinary.com/diasihr5q/image/upload/v1708428005/oslo.jpg"
+	},
+	{
+		"id": 13,
+		"name": "Stockholm",
+		"imageUrl": "https://res.cloudinary.com/diasihr5q/image/upload/v1708428087/stockholm.jpg"
+	},
+	{
+		"id": 14,
+		"name": "Copenhagen",
+		"imageUrl": "https://res.cloudinary.com/diasihr5q/image/upload/v1708428169/copenhagen.jpg"
+	}
+]
