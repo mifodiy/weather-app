@@ -2,9 +2,13 @@ import React from 'react'
 import {convertTimeToDateFormat} from '../../helpers/convertTimeToDateFormat'
 import './TripItem.css'
 
-const TripItem = ({id, name, imageUrl, startDate, endDate}) => {
+const TripItem = ({tripData, selectTrip, selectedTrip}) => {
+	const {id, name, imageUrl, startDate, endDate} = tripData;
+
+	const tripItemClass = id === selectedTrip?.id ? 'trip__item active' : 'trip__item';
+
 	return (
-		<div className='trip__item'>
+		<div className={tripItemClass} onClick={selectTrip}>
 			<img className='trip__img' src={imageUrl} alt={name}/>
 			<div className='trip__content'>
 				<h2 className='trip__title'>

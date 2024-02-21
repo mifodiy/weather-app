@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { MdOutlineCheck } from "react-icons/md";
 import './AddForm.css'
+import { convertTimeToDateFormat } from '../../helpers/convertTimeToDateFormat';
 
 const AddForm = ({cities, closeModal, addNewTrip}) => {
 	const [selectedCity, setSelectedCity] = useState('');
 	const [startDate, setStartDate] = useState('');
 	const [endDate, setEndDate] = useState('');
-	const [isVerify, setIsVerify] = useState(false)
+	const [isVerify, setIsVerify] = useState(false);
+	const minDate = convertTimeToDateFormat(Date.now() + 24 * 60 * 60 * 1000);
+	const maxDate = convertTimeToDateFormat(Date.now() + 15 * 24 * 60 * 60 * 1000);
 
 	const handleSubmit = (e) =>{
 		const chosenCity = cities.filter(city => city.id === +selectedCity)[0]
@@ -61,6 +64,9 @@ const AddForm = ({cities, closeModal, addNewTrip}) => {
 					type='date' 
 					name='startDate' 
 					id='startDate' 
+					min={minDate}
+					max={maxDate}
+					value={startDate}
 					onChange={handleStartDateChange}/>
 				<label className='trip-form__label' htmlFor='endDate'>
 					{!endDate ? <span className='trip-form__require'>*</span>
@@ -72,6 +78,9 @@ const AddForm = ({cities, closeModal, addNewTrip}) => {
 					type='date' 
 					name='endDate' 
 					id='endDate'
+					min={minDate}
+					max={maxDate}
+					value={endDate}
 					onChange={handleEndDateChange}/>
 			</form>
 			<div className='trip-form__btns'>

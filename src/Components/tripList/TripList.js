@@ -4,7 +4,7 @@ import './TripList.css'
 import TripItem from '../TripItem/TripItem'
 import { MdOutlineChevronLeft, MdOutlineChevronRight } from "react-icons/md";
 
-const TripList = ({openModal, trips}) => {
+const TripList = ({openModal, trips, selectTrip, selectedTrip}) => {
 
 	const tripList = useRef(null)
 	const [scrollLeft, setScrollLeft] = useState(0)
@@ -49,7 +49,9 @@ const TripList = ({openModal, trips}) => {
 			<div className='trip__list' ref={tripList}
 				onWheel={handleWheel}
 				onScroll={handleScroll}>
-				{trips.map(({id, ...props}) => <TripItem key={id} id={id} {...props}/>)}
+				{trips.map((trip) => (
+					<TripItem key={trip.id} tripData={trip} selectedTrip={selectedTrip} selectTrip={()=>selectTrip(trip)}/>
+				))}
 				<div className='trip__add-btn' onClick={openModal}>
 					<BiPlus size={20}/>
 					<span>Add Trip</span>

@@ -7,7 +7,8 @@
 }
 
 .forecast__list::-webkit-scrollbar {
-  width: 0;
+  height: 1px;
+	background-color: transparent;
 }
 
 .forecast__title {
