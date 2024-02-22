@@ -71,8 +71,9 @@ function App() {
       <TripList openModal={toggleModal} trips={getFilteredTrips().sort(
                 (prevTrip, nextTrip) => prevTrip.startDate - nextTrip.startDate
               )} selectTrip={handleSelectTrip} selectedTrip={selectedTrip}/>
-      {selectedTrip && forecastList && <ForecastList forecast={forecastList}/>}
-     
+      {selectedTrip && forecastList && 
+      <ForecastList forecast={forecastList}/>}
+    
     </main>
     <ForecastCard todayForecast={todayForecast} selectedTrip={selectedTrip}/>
     {isOpen && (

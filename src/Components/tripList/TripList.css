@@ -1,11 +1,11 @@
 .trip__wrapper {
 	position: relative;
-	width: 860px;
+	max-width: 860px;
 }
 .trip__list {
 	display: flex;
 	gap: 20px;
-	width: 860px;
+	max-width: 860px;
 	overflow-x: scroll;
 	scroll-behavior: smooth;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './ForecastCard.css'
 import { weatherIcon } from '../../images/images'
 import Timer from '../timer/Timer'
