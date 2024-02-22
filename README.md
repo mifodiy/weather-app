@@ -42,6 +42,10 @@ Start the server
 ```bash
   npm start
 ```
+## Open app
 
+```bash
+  https://mifodiy.github.io/weather-app/
+```
 
 
