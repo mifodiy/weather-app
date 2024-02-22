@@ -13,10 +13,11 @@ import { nanoid } from 'nanoid';
 import { getForecastByDay, getForecastByDays } from '../../api/weatherAPI';
 
 const defaultTrip = {id: 1, name: 'London', imageUrl: 'https://res.cloudinary.com/diasihr5q/image/upload/v1708426643/london.jpg', startDate: 1708560000000, endDate: 1708660000000}
+const savedTrips = JSON.parse(localStorage.getItem('trips'));
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-  const [trips, setTrips] = useState([defaultTrip]);
+  const [trips, setTrips] = useState(() => {return savedTrips ? [...savedTrips] : [defaultTrip]});
   const [selectedTrip, setSelectedTrip] = useState(null);
   const [forecastList, setForecastList] = useState(null);
   const [todayForecast, setTodayForecast] = useState(null);
@@ -32,6 +33,7 @@ function App() {
   const addNewTrip = (newTrip) => {
     newTrip.id = nanoid();
     setTrips([...trips, newTrip].sort((prevTrip, nextTrip) => prevTrip.startDate - nextTrip.startDate))
+    localStorage.setItem('trips', JSON.stringify([...trips, newTrip].sort((prevTrip, nextTrip) => prevTrip.startDate - nextTrip.startDate)))
   }
 
   const handleSelectTrip = (trip) => {
